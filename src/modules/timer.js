@@ -4,13 +4,14 @@ const timer = (deadline) => {
     const timerMinutes = document.querySelectorAll('.count-wrap > .count_3 > span')
     const timerSeconds = document.querySelectorAll('.count-wrap > .count_4 > span')
 
+
     let intervalID
 
     const getTimeRemaining = (deadline) => {
         let dateStop = new Date(deadline).getTime()
         let dateNow = new Date().getTime()
         let timeRemaining = (dateStop - dateNow) / 1000
-        let days = Math.floor(timeRemaining / 60 / 60 / 24)
+        let days = Math.floor(timeRemaining / 60 / 60 / 24) 
         let hours = Math.floor((timeRemaining / 60 / 60)-days*24)
         let minutes = Math.floor((timeRemaining / 60) % 60)
         let seconds = Math.floor(timeRemaining % 60)
@@ -23,7 +24,7 @@ const timer = (deadline) => {
         const zeroToNumber = () => {
             timerDays.forEach(timerDays => {
                 if (getTime.days < 10) {
-                timerDays.textContent = '0' + getTime.days
+                    timerDays.textContent = '0' + getTime.days
                 }
             })
             timerHours.forEach(timerHours => {
@@ -42,13 +43,15 @@ const timer = (deadline) => {
                 }
             })
             
+            
+            
         }
 
         timerDays.forEach(timerDays => {
             timerDays.textContent = getTime.days
         })
         timerHours.forEach(timerHours => {
-            timerHours.textContent = getTime.hoursgit
+            timerHours.textContent = getTime.hours
         })
         timerMinutes.forEach(timerMinutes => {
             timerMinutes.textContent = getTime.minutes
@@ -57,26 +60,15 @@ const timer = (deadline) => {
             timerSeconds.textContent = getTime.seconds
         })
         
+        
         zeroToNumber()
 
         if (getTime.timeRemaining < 0) {
             clearInterval(intervalID)
-            timerDays.forEach(timerDays => {
-                timerDays.textContent = '00'
-
-            })
-            timerHours.forEach(timerHours => {
-                timerHours.textContent = '00'
-
-            })
-            timerMinutes.forEach(timerMinutes => {
-                timerMinutes.textContent = '00'
-
-            })
-            timerSeconds.forEach(timerSeconds => {
-                timerSeconds.textContent = '00'
-
-            })
+            timerDays.textContent = '00'
+            timerHours.textContent = '00'
+            timerMinutes.textContent = '00'
+            timerSeconds.textContent = '00'
         }
         
     }

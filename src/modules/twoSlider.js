@@ -1,6 +1,6 @@
-const slider = () => {
-    const benefitItems = document.querySelectorAll('.benefits__item')
-    const benefContent = document.querySelector('#benefits')
+const twoSlider = () => {
+    const benefitItems = document.querySelectorAll('.service-block')
+    const benefContent = document.querySelector('#services')
 
 
 
@@ -9,7 +9,7 @@ const slider = () => {
     const checkWidth = () => {
         benefitItems.forEach((benefitItem, i) => {
             if (window.innerWidth >= 576) {
-                if (i > 2) {
+                if (i > 1) {
                     benefitItem.classList.add('not-active')
                    }
             } else {
@@ -33,7 +33,7 @@ const slider = () => {
     benefContent.addEventListener('click', (e) => {
         
         if (window.innerWidth >= 576) {
-            if (e.target.closest('.benefits__arrow--right')) {
+            if (e.target.closest('.services__arrow--right')) {
                 benefitItems.forEach(benefitItem => {
                     if (benefitItem.classList.contains('not-active')) {
                         benefitItem.classList.remove('not-active')
@@ -42,7 +42,7 @@ const slider = () => {
                     }
                 })
             }
-            if (e.target.closest('.benefits__arrow--left')) {
+            if (e.target.closest('.services__arrow--left')) {
                 benefitItems.forEach(benefitItem => {
                     if (benefitItem.classList.contains('not-active')) {
                         benefitItem.classList.remove('not-active')
@@ -72,4 +72,4 @@ const slider = () => {
     })
 }
 
-export default slider
+export default twoSlider

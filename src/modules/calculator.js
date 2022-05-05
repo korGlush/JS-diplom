@@ -1,43 +1,43 @@
 const calculator = () => {
+    const calc = document.getElementById('calc')
+    const balcony = document.getElementById('calc-type')
+    const glass = document.getElementById('calc-type-material')
+    const square = document.getElementById('calc-input')
+    const reuslt = document.getElementById('calc-total')
 
-    const calcBlock = document.getElementById('calc')
-    const calcBalconyType = document.getElementById('calc-type')
-    const calcSquare = document.getElementById('calc-input')
-    const calcTypeMaterial = document.getElementById('calc-type-material')
-    const total = document.getElementById('calc-total')
-
-    
     const countCalc = () => {
-        const calcTypeValue = +calcBalconyType.options[calcBalconyType.selectedIndex].value
-        let calcTypeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value
-        const calcSquareValue = calcSquare.value
+        const balconyValue = +balcony.options[balcony.selectedIndex].value
+        let glassValue = +glass.options[glass.selectedIndex].value
+        const squareValue = square.value
 
-        let totalValue = 0
+        let reusltValue = 0
 
-        
-        if(calcTypeMaterial.value == "--") {
-            calcTypeMaterialValue = 1
+
+        if(glass.value == "--") {
+            glassValue = 1
         }
 
-        if(calcBalconyType.value && calcSquare) {
-            totalValue = Math.round(calcSquareValue*calcTypeValue*calcTypeMaterialValue)
+
+        if (balcony.value && square.value) {
+            reusltValue = Math.round(balconyValue * glassValue * squareValue)
+        } else {
+            reusltValue = 0
         }
 
-        total.value = totalValue
+        reuslt.value = reusltValue
     }
-    if (calcBlock == null) {
-        console.log('блока с калькулятором нет!');
+    if (calc == null) {
+        console.log('Калькулятор на другой странице, дружище');
     } else {
-        calcBlock.addEventListener('input', (e) => {
-            if (e.target === calcBalconyType || e.target === calcSquare || 
-                e.target === calcTypeMaterial) {
-                countCalc()
-            } else {
-                totalValue = 0
-            }
-        })
-    }
-    
+    calc.addEventListener('input', (e) => {
+        if (e.target === balcony || e.target === square || 
+            e.target === glass) {
+            countCalc()
+        } else {
+            reusltValue = 0
+        }
+    })
+  }
 }
 
 export default calculator
