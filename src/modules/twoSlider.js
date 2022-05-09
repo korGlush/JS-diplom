@@ -3,22 +3,21 @@ const twoSlider = () => {
     const benefContent = document.querySelector('#services')
 
 
-
-    let currentSlide = 0 
+    let currentSlide = 0
 
     const checkWidth = () => {
         benefitItems.forEach((benefitItem, i) => {
             if (window.innerWidth >= 576) {
                 if (i > 1) {
                     benefitItem.classList.add('not-active')
-                   }
+                }
             } else {
-               if (i > 0) {
-                benefitItem.classList.add('not-active')
-               }
+                if (i > 0) {
+                    benefitItem.classList.add('not-active')
+                }
             }   
         })
-}
+    }
 
     checkWidth()
 
@@ -54,9 +53,9 @@ const twoSlider = () => {
         } else {
             prevSlide(benefitItems, currentSlide, 'not-active')
 
-            if (e.target.closest('.benefits__arrow--right')) {
+            if (e.target.closest('.services__arrow--right')) {
                 currentSlide++
-            } else if (e.target.closest('.benefits__arrow--left')) {
+            } else if (e.target.closest('.services__arrow--left')) {
                 currentSlide--          
             }
             if (currentSlide >= benefitItems.length) {
@@ -68,8 +67,10 @@ const twoSlider = () => {
     
             nextSlide(benefitItems, currentSlide, 'not-active')
         }   
-
     })
 }
+
+
+
 
 export default twoSlider
