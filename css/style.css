@@ -758,8 +758,7 @@ p.services-image_mobile {
   border-radius: 100%;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
 }
-.about-wrap {
-}
+
 .about-inner:after {
   position: absolute;
   content: "";
@@ -850,8 +849,7 @@ p.services-image_mobile {
   position: absolute;
   height: 100px;
 }
-.footer-copyright {
-}
+
 .footer-copyright span {
   color: #ffb135;
 }
@@ -947,6 +945,19 @@ p.services-image_mobile {
 #map iframe {
   border: 0 !important;
 }
+
+
+.img-div {
+  position: fixed;
+  top: 5%;
+  left: 30%;
+  width: 600px;
+  height: 850px;
+  background: url(../images/documents/original/document4.jpg) no-repeat center / cover;
+  z-index: 99;
+}
+
+
 .countdown {
   text-align: center;
   background-color: #ededed;
@@ -1460,7 +1471,7 @@ input.error {
   }
   ::-webkit-scrollbar-button {
     background-image: url("");
-    background-repat: no-repeat;
+    background-repeat: no-repeat;
     height: 0px;
     width: 8px;
   }
